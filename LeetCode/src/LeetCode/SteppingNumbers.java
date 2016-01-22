@@ -22,15 +22,11 @@ public class SteppingNumbers {
 			int first = val.charAt(0) - '0'; // values are always either ascending or descending from first value
 			String increase = Integer.toString(first);
 			String decrease = Integer.toString(first);
-			boolean stepping = false;
 			for (int j = 1; j < val.length(); j++) {
 				increase += Integer.toString(val.charAt(0) + j - '0');
 				decrease += Integer.toString(val.charAt(0) - j - '0');
 			}
 			if (val.equals(increase) && val.length() > 1 || val.equals(decrease) && val.length() > 1) {
-			stepping = true;
-			}
-			if (stepping) {
 				steppingNumbers.add(i);
 			}
 		}
