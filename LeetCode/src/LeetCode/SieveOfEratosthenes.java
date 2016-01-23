@@ -9,7 +9,7 @@ public class SieveOfEratosthenes {
 		for (int i = 2; i < n; i++) { // Let A be an array of Boolean values, indexed by integers 2 to n, initially all set to true.
 			primes[i] = true;
 		}
-		for (int i = 2; i <= Math.sqrt((double) n); i++) {
+		for (int i = 2; i < Math.sqrt((double) n); i++) {
 			if (primes[i]) {
 				int count = 0;
 				for (int j = i * i; j < n; j = i * i + (i * count)) {
