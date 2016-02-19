@@ -90,10 +90,15 @@ public class BinarySearchTree {
 				return tree.right;
 			}
 			if (tree.left != null && tree.right != null) { // two children
-				BinarySearchTree temp = tree;
-				tree = findMin(temp.right);
-				tree.right = deleteTree(temp.right, tree.value);
-				tree.left = temp.left;
+				BinarySearchTree successor = findMin(tree.right);
+				if (successor == tree.right) {
+					successor.right = null;
+				}
+				else {
+					successor.right = tree.right;
+				}
+				successor.left = tree.left;
+				return successor;
 			}
 			return tree;
 		}
@@ -111,6 +116,7 @@ public class BinarySearchTree {
 		tree.insertTree(tree, 5, null);
 		tree.deleteTree(tree, 1);
 		tree.deleteTree(tree, 7);
+		tree.deleteTree(tree, 5);
 		tree.traverseTree(tree);
 	}
 }
