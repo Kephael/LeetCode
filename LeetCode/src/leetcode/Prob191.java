@@ -1,4 +1,4 @@
-package LeetCode;
+package leetcode;
 
 public class Prob191 {
     // you need to treat n as an unsigned value

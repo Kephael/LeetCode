@@ -4,7 +4,7 @@ Given an array and a value, remove all instances of that value in place and retu
 The order of elements can be changed. It doesn't matter what you leave beyond the new length.
  */
 
-package LeetCode;
+package leetcode;
 
 public class Prob27 {
 	public static int removeElement(int[] nums, int val) {

@@ -4,7 +4,7 @@
  * Output: 7 -> 0 -> 8
  */
 
-package LeetCode;
+package leetcode;
 
 class ListNode {
 	int val;

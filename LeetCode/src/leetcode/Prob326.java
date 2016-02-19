@@ -1,4 +1,4 @@
-package LeetCode;
+package leetcode;
 
 public class Prob326 {
 	    public boolean isPowerOfThree(double n) {

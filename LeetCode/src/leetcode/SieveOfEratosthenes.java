@@ -1,4 +1,4 @@
-package LeetCode;
+package leetcode;
 /*
  * https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
  * Finds prime numbers in O(N^2) time and O(N) space

@@ -20,7 +20,8 @@ public class BinarySearchTree {
 		}
 		if (val > tree.value) { // go right
 			return search(tree.right, val);
-		} else { // go left
+		} 
+		else { // go left
 			return search(tree.left, val);
 		}
 	}
@@ -55,22 +56,19 @@ public class BinarySearchTree {
 		}
 	}
 
-	public void insertTree(BinarySearchTree tree, int val, BinarySearchTree parent) {
+	public BinarySearchTree insertTree(BinarySearchTree tree, int val, BinarySearchTree parent) {
 		if (tree == null) { // found spot to insert at
-			tree = new BinarySearchTree(val);
-			tree.parent = parent;
-			if (tree.value > parent.value) { // value is greater
-				parent.right = tree;
-			} else { // value is less
-				parent.left = tree;
-			}
+			BinarySearchTree newNode = new BinarySearchTree(val);
+			newNode.parent = parent;
+			return newNode;
 		}
-
 		if (val > tree.value) { // go right
-			insertTree(tree.right, val, tree);
-		} else if (val < tree.value) { // go left
-			insertTree(tree.left, val, tree);
+			tree.right = insertTree(tree.right, val, tree);
+		} 
+		else if (val < tree.value) { // go left
+			tree.left = insertTree(tree.left, val, tree);
 		}
+		return tree; // keeps existing left or right nodes where not inserted
 	}
 
 	public BinarySearchTree deleteTree(BinarySearchTree tree, int val) {
@@ -83,10 +81,10 @@ public class BinarySearchTree {
 		} else if (tree.value < val) {
 			tree.right = deleteTree(tree.right, val);
 		} else if (tree.value == val) { // found value to delete
-			if (tree.right == null) {
+			if (tree.right == null) { // one child or leaf
 				return tree.left;
 			}
-			if (tree.left == null) {
+			if (tree.left == null) { // one child
 				return tree.right;
 			}
 			if (tree.left != null && tree.right != null) { // two children
@@ -114,9 +112,12 @@ public class BinarySearchTree {
 		tree.insertTree(tree, 3, null);
 		tree.insertTree(tree, 6, null);
 		tree.insertTree(tree, 5, null);
+		System.out.println("printing...");
+		tree.traverseTree(tree);
 		tree.deleteTree(tree, 1);
 		tree.deleteTree(tree, 7);
 		tree.deleteTree(tree, 5);
+		System.out.println("printing...");
 		tree.traverseTree(tree);
 	}
 }

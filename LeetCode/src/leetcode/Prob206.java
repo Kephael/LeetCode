@@ -1,5 +1,5 @@
-package LeetCode;
-import LeetCode.ListNode;
+package leetcode;
+import leetcode.ListNode;
 
 /**
  * Definition for singly-linked list.

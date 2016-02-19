@@ -1,4 +1,4 @@
-package LeetCode;
+package leetcode;
 
 public class permutationsOfString {
     public  static void perm1(String s) { 
